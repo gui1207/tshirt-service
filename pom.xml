@@ -10,14 +10,14 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     	<maven.compiler.source>1.8</maven.compiler.source>
     	<maven.compiler.target>1.8</maven.compiler.target>    	
-		<cxf.version>3.2.4</cxf.version>
+		<cxf.version>3.3.2</cxf.version>
 		<full-artifact-name>target/${project.artifactId}-${project.version}.jar</full-artifact-name>
 	</properties>
 	
 	<parent>
 	    <groupId>org.springframework.boot</groupId>
 	    <artifactId>spring-boot-starter-parent</artifactId>
-	    <version>2.0.1.RELEASE</version>
+	    <version>2.1.5.RELEASE</version>
 	</parent>
 
 	<build>
@@ -84,6 +84,8 @@
 	</build>
 	
 	<dependencies>
+		
+		
 		<dependency>
 		    <groupId>org.apache.cxf</groupId>
 		    <artifactId>cxf-spring-boot-starter-jaxws</artifactId>

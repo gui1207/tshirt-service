@@ -20,7 +20,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="inventory" type="{http://mulesoft.org/tshirt-service}InventoryItem" maxOccurs="unbounded"/&gt;
+ *         &lt;element name="inventory" type="{http://acme.com/tshirt-service}InventoryItem" maxOccurs="unbounded"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;

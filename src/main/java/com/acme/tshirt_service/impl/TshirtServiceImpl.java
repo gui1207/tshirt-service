@@ -22,7 +22,7 @@ import com.acme.tshirt_service.TrackOrderResponse;
 import com.acme.tshirt_service.TshirtFaultException;
 import com.acme.tshirt_service.TshirtServicePortType;
 
-@javax.jws.WebService(serviceName = "TshirtServicePortTypeService", portName = "TshirtServicePortTypePort", targetNamespace = "http://mulesoft.org/tshirt-service", wsdlLocation = "classpath:wsdl/tshirt-service.wsdl", endpointInterface = "org.mulesoft.tshirt_service.TshirtServicePortType")
+@javax.jws.WebService(serviceName = "TshirtServicePortTypeService", portName = "TshirtServicePortTypePort", targetNamespace = "http://acme.com/tshirt-service", wsdlLocation = "classpath:wsdl/tshirt-service.wsdl", endpointInterface = "com.acme.tshirt_service.TshirtServicePortType")
 @Service
 public class TshirtServiceImpl implements TshirtServicePortType {
 

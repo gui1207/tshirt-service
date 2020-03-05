@@ -19,7 +19,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="size" type="{http://mulesoft.org/tshirt-service}Size"/&gt;
+ *         &lt;element name="size" type="{http://acme.com/tshirt-service}Size"/&gt;
  *         &lt;element name="productCode" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *         &lt;element name="email" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
