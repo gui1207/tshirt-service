@@ -18,7 +18,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="errorMessage" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="cardId" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -29,36 +29,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "errorMessage"
+    "cardId"
 })
-@XmlRootElement(name = "TshirtFault")
-public class TshirtFault {
+@XmlRootElement(name = "CardId")
+public class CardId {
 
     @XmlElement(required = true)
-    protected String errorMessage;
+    protected int cardId;
 
     /**
-     * Obtém o valor da propriedade errorMessage.
+     * Obtém o valor da propriedade cardId.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getErrorMessage() {
-        return errorMessage;
+    public int getCardId() {
+        return cardId;
     }
 
     /**
-     * Define o valor da propriedade errorMessage.
+     * Define o valor da propriedade cardId.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setErrorMessage(String value) {
-        this.errorMessage = value;
+    public void setCardId(int value) {
+        this.cardId = value;
     }
 
 }

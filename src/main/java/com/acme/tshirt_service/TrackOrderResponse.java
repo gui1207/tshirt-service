@@ -10,9 +10,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for anonymous complex type.
+ * <p>Classe Java de anonymous complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
  * 
  * <pre>
  * &lt;complexType&gt;
@@ -48,7 +48,7 @@ public class TrackOrderResponse {
     protected Size size;
 
     /**
-     * Gets the value of the orderId property.
+     * Obtém o valor da propriedade orderId.
      * 
      */
     public long getOrderId() {
@@ -56,7 +56,7 @@ public class TrackOrderResponse {
     }
 
     /**
-     * Sets the value of the orderId property.
+     * Define o valor da propriedade orderId.
      * 
      */
     public void setOrderId(long value) {
@@ -64,7 +64,7 @@ public class TrackOrderResponse {
     }
 
     /**
-     * Gets the value of the status property.
+     * Obtém o valor da propriedade status.
      * 
      * @return
      *     possible object is
@@ -76,7 +76,7 @@ public class TrackOrderResponse {
     }
 
     /**
-     * Sets the value of the status property.
+     * Define o valor da propriedade status.
      * 
      * @param value
      *     allowed object is
@@ -88,7 +88,7 @@ public class TrackOrderResponse {
     }
 
     /**
-     * Gets the value of the productCode property.
+     * Obtém o valor da propriedade productCode.
      * 
      */
     public int getProductCode() {
@@ -96,7 +96,7 @@ public class TrackOrderResponse {
     }
 
     /**
-     * Sets the value of the productCode property.
+     * Define o valor da propriedade productCode.
      * 
      */
     public void setProductCode(int value) {
@@ -104,7 +104,7 @@ public class TrackOrderResponse {
     }
 
     /**
-     * Gets the value of the size property.
+     * Obtém o valor da propriedade size.
      * 
      * @return
      *     possible object is
@@ -116,7 +116,7 @@ public class TrackOrderResponse {
     }
 
     /**
-     * Sets the value of the size property.
+     * Define o valor da propriedade size.
      * 
      * @param value
      *     allowed object is

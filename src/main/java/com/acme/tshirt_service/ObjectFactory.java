@@ -1,7 +1,10 @@
 
 package com.acme.tshirt_service;
 
+import javax.xml.bind.JAXBElement;
+import javax.xml.bind.annotation.XmlElementDecl;
 import javax.xml.bind.annotation.XmlRegistry;
+import javax.xml.namespace.QName;
 
 
 /**
@@ -21,12 +24,48 @@ import javax.xml.bind.annotation.XmlRegistry;
 @XmlRegistry
 public class ObjectFactory {
 
+    private final static QName _CreateCustomer_QNAME = new QName("http://acme.com/tshirt-service", "CreateCustomer");
+    private final static QName _UpdateCustomer_QNAME = new QName("http://acme.com/tshirt-service", "UpdateCustomer");
+    private final static QName _CreateCard_QNAME = new QName("http://acme.com/tshirt-service", "CreateCard");
+    private final static QName _UpdateCard_QNAME = new QName("http://acme.com/tshirt-service", "UpdateCard");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: com.acme.tshirt_service
      * 
      */
     public ObjectFactory() {
+    }
+
+    /**
+     * Create an instance of {@link Customer }
+     * 
+     */
+    public Customer createCustomer() {
+        return new Customer();
+    }
+
+    /**
+     * Create an instance of {@link CustomerId }
+     * 
+     */
+    public CustomerId createCustomerId() {
+        return new CustomerId();
+    }
+
+    /**
+     * Create an instance of {@link Cards }
+     * 
+     */
+    public Cards createCards() {
+        return new Cards();
+    }
+
+    /**
+     * Create an instance of {@link CardId }
+     * 
+     */
+    public CardId createCardId() {
+        return new CardId();
     }
 
     /**
@@ -91,6 +130,58 @@ public class ObjectFactory {
      */
     public TshirtFault createTshirtFault() {
         return new TshirtFault();
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Customer }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Customer }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://acme.com/tshirt-service", name = "CreateCustomer")
+    public JAXBElement<Customer> createCreateCustomer(Customer value) {
+        return new JAXBElement<Customer>(_CreateCustomer_QNAME, Customer.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Customer }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Customer }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://acme.com/tshirt-service", name = "UpdateCustomer")
+    public JAXBElement<Customer> createUpdateCustomer(Customer value) {
+        return new JAXBElement<Customer>(_UpdateCustomer_QNAME, Customer.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Cards }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Cards }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://acme.com/tshirt-service", name = "CreateCard")
+    public JAXBElement<Cards> createCreateCard(Cards value) {
+        return new JAXBElement<Cards>(_CreateCard_QNAME, Cards.class, null, value);
+    }
+
+    /**
+     * Create an instance of {@link JAXBElement }{@code <}{@link Cards }{@code >}
+     * 
+     * @param value
+     *     Java instance representing xml element's value.
+     * @return
+     *     the new instance of {@link JAXBElement }{@code <}{@link Cards }{@code >}
+     */
+    @XmlElementDecl(namespace = "http://acme.com/tshirt-service", name = "UpdateCard")
+    public JAXBElement<Cards> createUpdateCard(Cards value) {
+        return new JAXBElement<Cards>(_UpdateCard_QNAME, Cards.class, null, value);
     }
 
 }
