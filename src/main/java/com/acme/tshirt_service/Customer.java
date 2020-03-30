@@ -17,7 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="customerId" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="customerId" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *         &lt;element name="name" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="email" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="address" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
@@ -54,7 +54,6 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class Customer {
 
-    @XmlElement(required = false)
     protected int customerId;
     @XmlElement(required = true)
     protected String name;
@@ -82,10 +81,6 @@ public class Customer {
     /**
      * Obtém o valor da propriedade customerId.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
      */
     public int getCustomerId() {
         return customerId;
@@ -94,10 +89,6 @@ public class Customer {
     /**
      * Define o valor da propriedade customerId.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
      */
     public void setCustomerId(int value) {
         this.customerId = value;

@@ -17,7 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
- *         &lt;element name="cardId" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
+ *         &lt;element name="cardId" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *         &lt;element name="cardNumber" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="flag" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
  *         &lt;element name="dueDate" type="{http://www.w3.org/2001/XMLSchema}string"/&gt;
@@ -38,7 +38,6 @@ import javax.xml.bind.annotation.XmlType;
 })
 public class Cards {
 
-    @XmlElement(required = false)
     protected int cardId;
     @XmlElement(required = true)
     protected String cardNumber;
@@ -50,10 +49,6 @@ public class Cards {
     /**
      * Obtém o valor da propriedade cardId.
      * 
-     * @return
-     *     possible object is
-     *     {@link String }
-     *     
      */
     public int getCardId() {
         return cardId;
@@ -62,10 +57,6 @@ public class Cards {
     /**
      * Define o valor da propriedade cardId.
      * 
-     * @param value
-     *     allowed object is
-     *     {@link String }
-     *     
      */
     public void setCardId(int value) {
         this.cardId = value;

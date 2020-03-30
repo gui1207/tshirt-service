@@ -4,7 +4,7 @@
 
   	<xs:complexType name="Customer">
   	  <xs:sequence>
-  	  	<xs:element name="customerId" type="xs:integer"/>
+  	  	<xs:element name="customerId" type="xs:int"/>
         <xs:element name="name" type="xs:string"/>
         <xs:element name="email" type="xs:string"/>
         <xs:element name="address" type="xs:string"/>
@@ -25,14 +25,14 @@
   <xs:element name="CustomerId">
   	<xs:complexType>
   	  <xs:sequence>
-        <xs:element name="customerId" type="xs:integer"/>
+        <xs:element name="customerId" type="xs:int"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   
   	<xs:complexType name="Cards">
   	  <xs:sequence>
-  	  	<xs:element name="cardId" type="xs:integer"/>
+  	  	<xs:element name="cardId" type="xs:int"/>
         <xs:element name="cardNumber" type="xs:string"/>
         <xs:element name="flag" type="xs:string"/>
         <xs:element name="dueDate" type="xs:string"/>
@@ -44,7 +44,7 @@
     <xs:element name="CardId">
   	<xs:complexType>
   	  <xs:sequence>
-        <xs:element name="cardId" type="xs:integer"/>
+        <xs:element name="cardId" type="xs:int"/>
       </xs:sequence>
     </xs:complexType>
   </xs:element>
