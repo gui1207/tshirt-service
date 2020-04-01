@@ -9,9 +9,9 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java class for InventoryItem complex type.
+ * <p>Classe Java de InventoryItem complex type.
  * 
- * <p>The following schema fragment specifies the expected content contained within this class.
+ * <p>O seguinte fragmento do esquema especifica o conteúdo esperado contido dentro desta classe.
  * 
  * <pre>
  * &lt;complexType name="InventoryItem"&gt;
@@ -48,7 +48,7 @@ public class InventoryItem {
     protected int count;
 
     /**
-     * Gets the value of the productCode property.
+     * Obtém o valor da propriedade productCode.
      * 
      */
     public int getProductCode() {
@@ -56,7 +56,7 @@ public class InventoryItem {
     }
 
     /**
-     * Sets the value of the productCode property.
+     * Define o valor da propriedade productCode.
      * 
      */
     public void setProductCode(int value) {
@@ -64,7 +64,7 @@ public class InventoryItem {
     }
 
     /**
-     * Gets the value of the size property.
+     * Obtém o valor da propriedade size.
      * 
      * @return
      *     possible object is
@@ -76,7 +76,7 @@ public class InventoryItem {
     }
 
     /**
-     * Sets the value of the size property.
+     * Define o valor da propriedade size.
      * 
      * @param value
      *     allowed object is
@@ -88,7 +88,7 @@ public class InventoryItem {
     }
 
     /**
-     * Gets the value of the description property.
+     * Obtém o valor da propriedade description.
      * 
      * @return
      *     possible object is
@@ -100,7 +100,7 @@ public class InventoryItem {
     }
 
     /**
-     * Sets the value of the description property.
+     * Define o valor da propriedade description.
      * 
      * @param value
      *     allowed object is
@@ -112,7 +112,7 @@ public class InventoryItem {
     }
 
     /**
-     * Gets the value of the count property.
+     * Obtém o valor da propriedade count.
      * 
      */
     public int getCount() {
@@ -120,7 +120,7 @@ public class InventoryItem {
     }
 
     /**
-     * Sets the value of the count property.
+     * Define o valor da propriedade count.
      * 
      */
     public void setCount(int value) {

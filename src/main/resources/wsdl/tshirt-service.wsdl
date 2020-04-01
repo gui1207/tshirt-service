@@ -2,6 +2,53 @@
   <wsdl:types>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://acme.com/tshirt-service" targetNamespace="http://acme.com/tshirt-service" version="1.0">
 
+  	<xs:complexType name="Customer">
+  	  <xs:sequence>
+  	  	<xs:element name="customerId" type="xs:int" minOccurs="0" />
+        <xs:element name="name" type="xs:string"/>
+        <xs:element name="email" type="xs:string"/>
+        <xs:element name="address" type="xs:string"/>
+        <xs:element name="neighborhood" type="xs:string"/>
+        <xs:element name="city" type="xs:string"/>
+        <xs:element name="stateOrProvince" type="xs:string"/>
+        <xs:element name="postalCode" type="xs:string"/>
+        <xs:element name="country" type="xs:string"/>
+        <xs:element name="phone" type="xs:string"/>
+        <xs:element name="title" type="xs:string"/>
+        <xs:element name="company" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+    <xsd:element name="CreateCustomer" type="tns:Customer"/>
+    <xsd:element name="UpdateCustomer" type="tns:Customer"/>
+    
+  
+  <xs:element name="CustomerId">
+  	<xs:complexType>
+  	  <xs:sequence>
+        <xs:element name="customerId" type="xs:int"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  	<xs:complexType name="Cards">
+  	  <xs:sequence>
+  	  	<xs:element name="cardId" type="xs:int" minOccurs="0"/>
+        <xs:element name="cardNumber" type="xs:string"/>
+        <xs:element name="flag" type="xs:string"/>
+        <xs:element name="dueDate" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+    <xs:element name="CreateCard" type="tns:Cards"/>
+    <xs:element name="UpdateCard" type="tns:Cards"/>
+  
+    <xs:element name="CardId">
+  	<xs:complexType>
+  	  <xs:sequence>
+        <xs:element name="cardId" type="xs:int"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
   <xs:element name="ListInventory">
     <xs:complexType>
       <xs:sequence/>
@@ -121,6 +168,30 @@
     <wsdl:part element="tns:TrackOrderResponse" name="body">
     </wsdl:part>
   </wsdl:message>
+  <wsdl:message name="CreateCustomers">
+    <wsdl:part element="tns:CreateCustomer" name="body">
+    </wsdl:part>
+  </wsdl:message>
+    <wsdl:message name="UpdateCustomers">
+    <wsdl:part element="tns:UpdateCustomer" name="body">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CustomerId">
+    <wsdl:part element="tns:CustomerId" name="body">
+    </wsdl:part>
+  </wsdl:message>
+    <wsdl:message name="UpdateCards">
+    <wsdl:part element="tns:UpdateCard" name="body">
+    </wsdl:part>
+  </wsdl:message>
+      <wsdl:message name="CreateCards">
+    <wsdl:part element="tns:CreateCard" name="body">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="CardId">
+    <wsdl:part element="tns:CardId" name="body">
+    </wsdl:part>
+  </wsdl:message>
   <wsdl:message name="TshirtFault_Exception">
     <wsdl:part element="tns:TshirtFault" name="TshirtFault_Exception">
     </wsdl:part>
@@ -150,9 +221,129 @@
       <wsdl:fault message="tns:TshirtFault_Exception" name="TshirtFault_Exception">
     </wsdl:fault>
     </wsdl:operation>
+    <wsdl:operation name="CreateCustomer">
+      <wsdl:input message="tns:CreateCustomers" name="Customers">
+    </wsdl:input>
+      <wsdl:output message="tns:CustomerId" name="CustomerId">
+    </wsdl:output>
+      <wsdl:fault message="tns:TshirtFault_Exception" name="TshirtFault_Exception">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomer">
+     <wsdl:input message="tns:UpdateCustomers" name="UpdateCustomers">
+     </wsdl:input>
+     <wsdl:output message="tns:CustomerId" name= "UpdateCustomerId">
+     </wsdl:output>
+     <wsdl:fault message="tns:TshirtFault_Exception" name="TshirtFault_Exception">
+     </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomer">
+      <wsdl:input message="tns:CustomerId" name="GetCustomerId">
+    </wsdl:input>
+      <wsdl:output message="tns:CreateCustomers" name="GetCustomers">
+    </wsdl:output>
+      <wsdl:fault message="tns:TshirtFault_Exception" name="TshirtFault_Exception">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="CreateCard">
+      <wsdl:input message="tns:CreateCards" name="CreateCard">
+    </wsdl:input>
+      <wsdl:output message="tns:CardId" name="CardId">
+    </wsdl:output>
+      <wsdl:fault message="tns:TshirtFault_Exception" name="TshirtFault_Exception">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCard">
+      <wsdl:input message="tns:UpdateCards" name="UpdateCard">
+    </wsdl:input>
+      <wsdl:output message="tns:CardId" name="UpdateCardId">
+    </wsdl:output>
+      <wsdl:fault message="tns:TshirtFault_Exception" name="TshirtFault_Exception">
+    </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="GetCard">
+      <wsdl:input message="tns:CardId" name="GetCardId">
+      </wsdl:input>
+      <wsdl:output message="tns:CreateCards" name="GetCards">
+    </wsdl:output>
+      <wsdl:fault message="tns:TshirtFault_Exception" name="TshirtFault_Exception">
+    </wsdl:fault>
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="TshirtServicePortTypeServiceSoapBinding" type="tns:TshirtServicePortType">
     <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="CreateCustomer">
+      <soap:operation soapAction="http://acme.com/tshirt-service/create-customer" style="document"/>
+      <wsdl:input name="Customers">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="CustomerId">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="TshirtFault_Exception">
+        <soap:fault name="TshirtFault_Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCustomer">
+          <soap:operation soapAction="http://acme.com/tshirt-service/update-customer" style="document"/>
+      <wsdl:input name="UpdateCustomers">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="UpdateCustomerId">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="TshirtFault_Exception">
+        <soap:fault name="TshirtFault_Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+        <wsdl:operation name="GetCustomer">
+      <soap:operation soapAction="http://acme.com/tshirt-service/get-customer" style="document"/>
+      <wsdl:input name="GetCustomerId">
+      	<soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetCustomers">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="TshirtFault_Exception">
+        <soap:fault name="TshirtFault_Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+        <wsdl:operation name="CreateCard">
+      <soap:operation soapAction="http://acme.com/tshirt-service/create-card" style="document"/>
+      <wsdl:input name="CreateCard">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="CardId">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="TshirtFault_Exception">
+        <soap:fault name="TshirtFault_Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCard">
+      <soap:operation soapAction="http://acme.com/tshirt-service/update-card" style="document"/>
+      <wsdl:input name="UpdateCard">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="UpdateCardId">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="TshirtFault_Exception">
+        <soap:fault name="TshirtFault_Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
+        <wsdl:operation name="GetCard">
+      <soap:operation soapAction="http://acme.com/tshirt-service/get-card" style="document"/>
+      <wsdl:input name="GetCardId">
+      	<soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="GetCards">
+        <soap:body use="literal"/>
+      </wsdl:output>
+      <wsdl:fault name="TshirtFault_Exception">
+        <soap:fault name="TshirtFault_Exception" use="literal"/>
+      </wsdl:fault>
+    </wsdl:operation>
     <wsdl:operation name="TrackOrder">
       <soap:operation soapAction="http://acme.com/tshirt-service/track-order" style="document"/>
       <wsdl:input name="TrackOrder">

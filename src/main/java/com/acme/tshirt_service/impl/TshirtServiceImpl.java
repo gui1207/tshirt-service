@@ -3,15 +3,19 @@ package com.acme.tshirt_service.impl;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-
 import org.modelmapper.ModelMapper;
 import org.modelmapper.TypeToken;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import com.acme.controller.TshirtController;
+import com.acme.entity.CardEntity;
+import com.acme.entity.CustomerEntity;
 import com.acme.entity.TshirtOrder;
 import com.acme.exception.TshirtFaultExceptionBuilder;
+import com.acme.tshirt_service.CardId;
+import com.acme.tshirt_service.Cards;
+import com.acme.tshirt_service.Customer;
+import com.acme.tshirt_service.CustomerId;
 import com.acme.tshirt_service.InventoryItem;
 import com.acme.tshirt_service.ListInventory;
 import com.acme.tshirt_service.ListInventoryResponse;
@@ -36,6 +40,7 @@ public class TshirtServiceImpl implements TshirtServicePortType {
 	public void setTshirtController(TshirtController tshirtController) {
 		this.tshirtController = tshirtController;
 	}
+	
 
 	public TrackOrderResponse trackOrder(TrackOrder body) throws TshirtFaultException {
 		LOGGER.info("Executing operation trackOrder");
@@ -81,5 +86,95 @@ public class TshirtServiceImpl implements TshirtServicePortType {
 			throw TshirtFaultExceptionBuilder.buildException(e);
 		}		
 	}
+
+	@Override
+	public Cards getCard(CardId body) throws TshirtFaultException {
+		try {
+			Cards cards = new Cards();
+			cards = tshirtController.getCard(body);
+			return cards;
+		} catch (Exception e) {
+			LOGGER.log(Level.SEVERE, "orderTshirt exception", e);
+			throw TshirtFaultExceptionBuilder.buildException(e);
+		}
+		
+	}
+	
+	
+	public CustomerId createCustomer(Customer body) throws TshirtFaultException{
+        LOGGER.info("Executing operation createCustomer");
+        
+        try {
+            CustomerEntity customerEntity = modelMapper.map(body, com.acme.entity.CustomerEntity.class);
+            int customerId = tshirtController.createCustomer(customerEntity);
+            CustomerId customerIdResponse = new CustomerId();
+            customerIdResponse.setCustomerId(customerId);
+            return customerIdResponse;
+        } catch (Exception e) {
+            LOGGER.log(Level.SEVERE, "orderTshirt exception", e);            
+            throw TshirtFaultExceptionBuilder.buildException(e);
+        }
+
+    }
+
+	@Override
+	public CustomerId updateCustomer(Customer body) throws TshirtFaultException {
+		try {
+            CustomerEntity customerEntity = modelMapper.map(body, com.acme.entity.CustomerEntity.class);
+            int customerId = tshirtController.updateCustomer(customerEntity);
+            CustomerId customerIdResponse = new CustomerId();
+            customerIdResponse.setCustomerId(customerId);
+            return customerIdResponse;
+        } catch (Exception e) {
+            LOGGER.log(Level.SEVERE, "orderTshirt exception", e);            
+            throw TshirtFaultExceptionBuilder.buildException(e);
+        }
+	}
+
+	@Override
+	public Customer getCustomer(CustomerId body) throws TshirtFaultException {
+		try {
+			Customer customer = new Customer();
+			customer = tshirtController.getCustomer(body);
+			return customer;
+		} catch (Exception e) {
+			LOGGER.log(Level.SEVERE, "orderTshirt exception", e);
+			throw TshirtFaultExceptionBuilder.buildException(e);
+		}
+		
+	}
+
+	@Override
+	public CardId updateCard(Cards body) throws TshirtFaultException {
+		try {
+            CardEntity cardEntity = modelMapper.map(body, com.acme.entity.CardEntity.class);
+            int cardId = tshirtController.updateCard(cardEntity);
+            CardId cardIdResponse = new CardId();
+            cardIdResponse.setCardId(cardId);
+            return cardIdResponse;
+        } catch (Exception e) {
+            LOGGER.log(Level.SEVERE, "orderTshirt exception", e);            
+            throw TshirtFaultExceptionBuilder.buildException(e);
+        }
+	}
+	
+
+	@Override
+	public CardId createCard(Cards body) throws TshirtFaultException {
+		LOGGER.info("Executing operation createCard");
+        
+        try {
+            CardEntity cardEntity = modelMapper.map(body, com.acme.entity.CardEntity.class);
+            int cardId = tshirtController.createCard(cardEntity);
+            CardId cardIdResponse = new CardId();
+            cardIdResponse.setCardId(cardId);
+            return cardIdResponse;
+        } catch (Exception e) {
+            LOGGER.log(Level.SEVERE, "orderTshirt exception", e);            
+            throw TshirtFaultExceptionBuilder.buildException(e);
+        }
+
+    }
+	
 
 }

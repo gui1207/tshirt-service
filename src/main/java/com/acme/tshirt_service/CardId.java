@@ -17,6 +17,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent&gt;
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType"&gt;
  *       &lt;sequence&gt;
+ *         &lt;element name="cardId" type="{http://www.w3.org/2001/XMLSchema}int"/&gt;
  *       &lt;/sequence&gt;
  *     &lt;/restriction&gt;
  *   &lt;/complexContent&gt;
@@ -26,9 +27,28 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "")
-@XmlRootElement(name = "ListInventory")
-public class ListInventory {
+@XmlType(name = "", propOrder = {
+    "cardId"
+})
+@XmlRootElement(name = "CardId")
+public class CardId {
 
+    protected int cardId;
+
+    /**
+     * Obtém o valor da propriedade cardId.
+     * 
+     */
+    public int getCardId() {
+        return cardId;
+    }
+
+    /**
+     * Define o valor da propriedade cardId.
+     * 
+     */
+    public void setCardId(int value) {
+        this.cardId = value;
+    }
 
 }
