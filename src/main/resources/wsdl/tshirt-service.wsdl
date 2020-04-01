@@ -4,7 +4,7 @@
 
   	<xs:complexType name="Customer">
   	  <xs:sequence>
-  	  	<xs:element name="customerId" type="xs:int"/>
+  	  	<xs:element name="customerId" type="xs:int" minOccurs="0" />
         <xs:element name="name" type="xs:string"/>
         <xs:element name="email" type="xs:string"/>
         <xs:element name="address" type="xs:string"/>
@@ -32,7 +32,7 @@
   
   	<xs:complexType name="Cards">
   	  <xs:sequence>
-  	  	<xs:element name="cardId" type="xs:int"/>
+  	  	<xs:element name="cardId" type="xs:int" minOccurs="0"/>
         <xs:element name="cardNumber" type="xs:string"/>
         <xs:element name="flag" type="xs:string"/>
         <xs:element name="dueDate" type="xs:string"/>
