@@ -84,7 +84,7 @@ public class TshirtController {
         int customerId;
         try {
             CustomerEntity save = customerRepository.save(customerEntity);
-            customerId = save.getId();
+            customerId = save.getCustomerId();
         } catch (Exception e) {
             throw new TshirtException("Customer invalid!");
         }
@@ -92,11 +92,11 @@ public class TshirtController {
     }
     public int updateCustomer(CustomerEntity customerEntity) {
         int customerId;
-        Optional<CustomerEntity> findById = customerRepository.findById(customerEntity.getId());
+        Optional<CustomerEntity> findById = customerRepository.findById(customerEntity.getCustomerId());
         if (findById.isPresent()) {
 	        try {
 	            CustomerEntity save = customerRepository.save(customerEntity);
-	            customerId = save.getId();
+	            customerId = save.getCustomerId();
 	            return customerId;
 	        } catch (Exception e) {
 	            throw new TshirtException("Customer invalid!");
@@ -123,22 +123,22 @@ public class TshirtController {
         int cardId;
         try {
             CardEntity save = cardRepository.save(cardEntity);
-            cardId = save.getId();
+            cardId = save.getCardId();
         } catch (Exception e) {
-            throw new TshirtException("Customer invalid!");
+            throw new TshirtException("Card invalid!");
         }
         return cardId;
     }
     public int updateCard(CardEntity cardEntity) {
         int cardId;
-        Optional<CardEntity> findById = cardRepository.findById(cardEntity.getId());
+        Optional<CardEntity> findById = cardRepository.findById(cardEntity.getCardId());
         if (findById.isPresent()) {
 	        try {
 	            CardEntity save = cardRepository.save(cardEntity);
-	            cardId = save.getId();
+	            cardId = save.getCardId();
 	            return cardId;
 	        } catch (Exception e) {
-	            throw new TshirtException("Customer invalid!");
+	            throw new TshirtException("Card invalid!");
 	        }
         }else {
         	throw new TshirtException("CardId doesn't exist!");
@@ -152,7 +152,7 @@ public class TshirtController {
             CardEntity cardEntity = findById.get();
             cards = modelMapper.map(cardEntity, com.acme.tshirt_service.Cards.class);
         } catch (Exception e) {
-            throw new TshirtException("CustomerId invalid!");
+            throw new TshirtException("Card invalid!");
         }
         return cards;
     }

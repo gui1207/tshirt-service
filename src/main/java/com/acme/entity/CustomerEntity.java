@@ -10,6 +10,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.PositiveOrZero;
@@ -17,22 +18,32 @@ import javax.validation.constraints.Size;
 
  
 @Entity
+@Table(name="customer")
 public class CustomerEntity implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int customerId;
     private String name;
     @Email(message = "Email should be valid")
     private String email;
+    @Size(min = 1, max = 40, message = "Address must be between 1 and 40 characters")
     private String address;
+    @Size(min = 1, max = 20, message = "neighborhood must be between 1 and 20 characters")
     private String neighborhood;
+    @Size(min = 1, max = 20, message = "city must be between 1 and 20 characters")
     private String city;
+    @Size(min = 1, max = 20, message = "state or province must be between 1 and 20 characters")
     private String stateOrProvince;
+    @Size(min = 1, max = 10, message = "postalCode must be between 1 and 10 characters")
     private String postalCode;
+    @Size(min = 1, max = 20, message = "country must be between 1 and 20 characters")
     private String country;
+    @Size(min = 1, max = 20, message = "Company must be between 1 and 20 characters")
     private String company;
+    @Size(min = 1, max = 20, message = "title must be between 1 and 20 characters")
     private String title;
+    @Size(min = 1, max = 15, message = "phone must be between 1 and 15 characters")
     private String phone;
     
     public String getName() {
@@ -101,11 +112,11 @@ public class CustomerEntity implements Serializable {
     public void setPhone(String phone) {
         this.phone = phone;
     }
-    public int getId() {
-        return id;
+    public int getCustomerId() {
+        return customerId;
     }
-    public void setId(int id) {
-        this.id = id;
+    public void setCustomerId(int customerId) {
+        this.customerId = customerId;
     }
     
 }

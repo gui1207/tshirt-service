@@ -5,24 +5,24 @@ create table inventory_item (
     count bigint not null
 );
 create table customer (
-    customerId int auto_increment primary key,
+    customer_id int auto_increment primary key,
     name varchar(20),
     email varchar(20),
-    address varchar(20),
+    address varchar(40),
     neighborhood varchar(20),
     city varchar(20),
     state_or_province varchar(20),
-    postalCode varchar(10),
+    postal_code varchar(10),
     country varchar(20),
     company varchar(20),
     title varchar(20),
     phone varchar(15)
 );
 create table card (
-	cardId int auto_increment primary key,
-	card varchar(20),
+	card_id int auto_increment primary key,
+	card_number varchar(20),
 	flag varchar(20),
-	dueDate varchar(20)
+	due_date varchar(20)
 );
 
 
